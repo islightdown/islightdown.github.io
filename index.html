@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Is Light Down Today?</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<h1>
+    Is Light Down Today?
+</h1>
+<p>
+    今天 Light 又挂了吗？
+</p>
+<p>
+    This service sends HTTP HEAD requests to multiple websites via LUG Light Accelerator.
+</p>
+<p>
+    Results will be cached for 30 seconds.
+</p>
+<table id="tab">
+    <tr>
+        <td>Website</td>
+        <td>HTTPS proxy</td>
+        <td>HTTP proxy</td>
+        <td>Socks5 proxy</td>
+    </tr>
+    
+    <tr>
+        <td>google</td>
+        
+        <td>Checking...</td>
+        
+        <td>Checking...</td>
+        
+        <td>Checking...</td>
+        
+    </tr>
+    
+    <tr>
+        <td>youtube</td>
+        
+        <td>Checking...</td>
+        
+        <td>Checking...</td>
+        
+        <td>Checking...</td>
+        
+    </tr>
+    
+    <tr>
+        <td>twitter</td>
+        
+        <td>Checking...</td>
+        
+        <td>Checking...</td>
+        
+        <td>Checking...</td>
+        
+    </tr>
+    
+    <tr>
+        <td>github</td>
+        
+        <td>Checking...</td>
+        
+        <td>Checking...</td>
+        
+        <td>Checking...</td>
+        
+    </tr>
+    
+    <tr>
+        <td>baidu</td>
+        
+        <td>Checking...</td>
+        
+        <td>Checking...</td>
+        
+        <td>Checking...</td>
+        
+    </tr>
+    
+    <tr>
+        <td>lug_light</td>
+        
+        <td>Checking...</td>
+        
+        <td>Checking...</td>
+        
+        <td>Checking...</td>
+        
+    </tr>
+    
+    <tr>
+        <td>telegram</td>
+        
+        <td>Checking...</td>
+        
+        <td>Checking...</td>
+        
+        <td>Checking...</td>
+        
+    </tr>
+    
+    <tr>
+        <td>google_http</td>
+        
+        <td>Checking...</td>
+        
+        <td>Checking...</td>
+        
+        <td>Checking...</td>
+        
+    </tr>
+    
+    <tr>
+        <td>baidu_http</td>
+        
+        <td>Checking...</td>
+        
+        <td>Checking...</td>
+        
+        <td>Checking...</td>
+        
+    </tr>
+    
+    <tr>
+        <td>home_ustc</td>
+        
+        <td>Checking...</td>
+        
+        <td>Checking...</td>
+        
+        <td>Checking...</td>
+        
+    </tr>
+    
+</table>
+<p>
+    by zzh1996
+</p>
+<p>
+    友情链接：<a href="https://islug.online/">今天 LUG 倒闭了吗？</a>
+</p>
+<script>
+    function test(website, proxy, target) {
+        fetch('https://islightdown-api.zhengzihan.com/test/' + website + '/' + proxy).then(function (response) {
+            return response.text();
+        }).then(function (text) {
+            document.getElementById(target).innerHTML = text;
+        });
+    }
+
+    var websites = ['google', 'youtube', 'twitter', 'github', 'baidu', 'lug_light', 'telegram', 'google_http', 'baidu_http', 'home_ustc'];
+    var proxies = ['https', 'http', 'socks'];
+    var table = document.getElementById("tab");
+    for (var i = 0, row; row = table.rows[i + 1]; i++) {
+        for (var j = 0, col; col = row.cells[j + 1]; j++) {
+            if (proxies[j] != 'socks' || websites[i] == 'telegram') {
+                var id = websites[i] + '_' + proxies[j];
+                col.setAttribute("id", id);
+                test(websites[i], proxies[j], id);
+            } else {
+                col.innerHTML = '-';
+            }
+        }
+    }
+</script>
+</body>
+</html>
