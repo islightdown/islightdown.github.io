@@ -39,7 +39,7 @@
     </tr>
     
     <tr>
-        <td>google</td>
+        <td>Google</td>
         
         <td>Checking...</td>
         
@@ -50,7 +50,7 @@
     </tr>
     
     <tr>
-        <td>youtube</td>
+        <td>YouTube</td>
         
         <td>Checking...</td>
         
@@ -61,7 +61,7 @@
     </tr>
     
     <tr>
-        <td>twitter</td>
+        <td>X (Twitter)</td>
         
         <td>Checking...</td>
         
@@ -72,7 +72,29 @@
     </tr>
     
     <tr>
-        <td>github</td>
+        <td>GitHub</td>
+        
+        <td>Checking...</td>
+        
+        <td>Checking...</td>
+        
+        <td>Checking...</td>
+        
+    </tr>
+
+    <tr>
+        <td>Wikipedia</td>
+        
+        <td>Checking...</td>
+        
+        <td>Checking...</td>
+        
+        <td>Checking...</td>
+        
+    </tr>
+
+    <tr>
+        <td>ChatGPT</td>
         
         <td>Checking...</td>
         
@@ -83,7 +105,7 @@
     </tr>
     
     <tr>
-        <td>baidu</td>
+        <td>Baidu</td>
         
         <td>Checking...</td>
         
@@ -94,7 +116,7 @@
     </tr>
     
     <tr>
-        <td>lug_light</td>
+        <td>LUG Light</td>
         
         <td>Checking...</td>
         
@@ -105,7 +127,7 @@
     </tr>
     
     <tr>
-        <td>telegram</td>
+        <td>Telegram Web</td>
         
         <td>Checking...</td>
         
@@ -116,7 +138,7 @@
     </tr>
     
     <tr>
-        <td>google_http</td>
+        <td>Google HTTP</td>
         
         <td>Checking...</td>
         
@@ -127,7 +149,7 @@
     </tr>
     
     <tr>
-        <td>baidu_http</td>
+        <td>Baidu HTTP</td>
         
         <td>Checking...</td>
         
@@ -138,7 +160,7 @@
     </tr>
     
     <tr>
-        <td>home_ustc</td>
+        <td>home.ustc.edu.cn</td>
         
         <td>Checking...</td>
         
@@ -152,9 +174,6 @@
 <p>
     by zzh1996
 </p>
-<p>
-    友情链接：<a href="https://islug.online/">今天 LUG 倒闭了吗？</a>
-</p>
 <script>
     function test(website, proxy, target) {
         fetch('https://islightdown-api.zhengzihan.com/test/' + website + '/' + proxy).then(function (response) {
@@ -164,7 +183,7 @@
         });
     }
 
-    var websites = ['google', 'youtube', 'twitter', 'github', 'baidu', 'lug_light', 'telegram', 'google_http', 'baidu_http', 'home_ustc'];
+    var websites = ['google', 'youtube', 'twitter', 'github', 'wikipedia', 'chatgpt', 'baidu', 'lug_light', 'telegram', 'google_http', 'baidu_http', 'home_ustc'];
     var proxies = ['https', 'http', 'socks'];
     var table = document.getElementById("tab");
     for (var i = 0, row; row = table.rows[i + 1]; i++) {
